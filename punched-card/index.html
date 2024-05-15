@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Punched card</title>
+    <style>
+        .content-center {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 0 40px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h4 style="text-align: center; margin: 4px 0 12px 0">
+        <a href="https://en.wikipedia.org/wiki/Punched_card">Punched card
+        </a>
+    </h4>
+    <p style="text-align: center;" id="result"><b>___</b></p>
+    <div class="content-center">
+        <table id="dashbord" style="margin: 0 0 10px 0;"></table>
+        <button id="decode">decode</button>
+        <img src="./alphabet.jpg" />
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
