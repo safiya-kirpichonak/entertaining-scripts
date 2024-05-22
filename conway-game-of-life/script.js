@@ -1,27 +1,38 @@
+"use strict";
+
+/**
+ * Start state of the game.
+ */
+
+const field = document.getElementById("field");
+const stepButton = document.getElementById("step");
+const inputHeight = document.getElementById("width");
+const inputWidth = document.getElementById("height");
+const createButton = document.getElementById("create");
+const simulationButton = document.getElementById("simulation");
+
 let width = 0;
 let height = 0;
-let checkboxes = [];
-let field = document.getElementById("field");
-let stepButton = document.getElementById("step");
-let createButton = document.getElementById("create");
-let simulationButton = document.getElementById("simulation");
-
+let life = null;
+const checkboxes = [];
 stepButton.disabled = true;
 simulationButton.disabled = true;
 
-createButton.addEventListener("click", () => {
-  let inputHeight = document.querySelector("[placeholder='height']");
-  let inputWidth = document.querySelector("[placeholder='width']");
-  height = inputHeight.value || 2;
+/**
+ * Create a field with checkboxes in random state.
+ */
+
+function createField() {
   width = inputWidth.value || 2;
+  height = inputHeight.value || 2;
 
   if (isNaN(Number(height)) || isNaN(Number(width))) return;
-  if (height > 42 || Number(width) > 42) return;
+  if (Number(width) > 42 || Number(width) > 42) return;
 
   for (let i = 0; i < height; i++) {
-    let row = [];
+    const row = [];
     for (let i = 0; i < width; i++) {
-      let checkbox = document.createElement("input");
+      const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       if (Math.random() < 0.5) checkbox.checked = true;
       row.push(checkbox);
@@ -37,16 +48,18 @@ createButton.addEventListener("click", () => {
   inputWidth.disabled = true;
   stepButton.disabled = false;
   simulationButton.disabled = false;
-});
+}
 
-stepButton.addEventListener("click", createNewGeneration);
-simulationButton.addEventListener("click", runSimulation);
+/**
+ * Update field following game rules every 200ms.
+ */
 
-let life = null;
 function runSimulation() {
+  const MILLISECONDS = 200;
+
   if (!life) {
     simulationButton.textContent = "stop";
-    life = setInterval(createNewGeneration, 200);
+    life = setInterval(createNewGeneration, MILLISECONDS);
   } else {
     simulationButton.textContent = "start";
     clearInterval(life);
@@ -54,13 +67,20 @@ function runSimulation() {
   }
 }
 
+/**
+ * Create new generation of the game following the rules:
+ * 1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+ * 2. Any live cell with two or three live neighbors lives on to the next generation.
+ * 3. Any live cell with more than three live neighbors dies, as if by overpopulation.
+ */
+
 function createNewGeneration() {
-  let copyState = checkboxes
+  const copyState = checkboxes
     .slice()
     .map((item) => item.map((item) => item.checked));
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
-      let neighbors = countLiveNeighbors(i, j, copyState);
+      const neighbors = countAliveNeighbors(i, j, copyState);
       if (copyState[i][j] && (neighbors > 3 || neighbors < 2))
         checkboxes[i][j].checked = false;
       if (!copyState[i][j] && neighbors === 3) checkboxes[i][j].checked = true;
@@ -68,7 +88,12 @@ function createNewGeneration() {
   }
 }
 
-function countLiveNeighbors(row, column, matrix) {
+/**
+ * Count the number of alive neighbors. Ignore the cell 
+ * itself and outside the field.
+ */
+
+function countAliveNeighbors(row, column, matrix) {
   let numberOfLiveNeighbors = 0;
   for (let i = row - 1; i < row + 2; i++) {
     for (let j = column - 1; j < column + 2; j++) {
@@ -79,3 +104,7 @@ function countLiveNeighbors(row, column, matrix) {
   }
   return numberOfLiveNeighbors;
 }
+
+createButton.addEventListener("click", createField);
+stepButton.addEventListener("click", createNewGeneration);
+simulationButton.addEventListener("click", runSimulation);
