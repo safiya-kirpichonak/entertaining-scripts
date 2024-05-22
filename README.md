@@ -6,8 +6,8 @@ separate repository, but they were fun to write and I learned something new whil
 ## List of scripts
 
 - conway-game-of-life - A simple implementation of Conway's Game of Life in JavaScript.
-- punched-card - A simple implementation creator and decoder of punched card.
+- punched-card - A simple implementation creator and decoder of punched card in Python.
 
-## Plan
+## Plans
 
 - steganography - A simple implementation of steganography in Python.
