@@ -2,12 +2,11 @@ import argparse
 
 from alphabet import alphabet
 
-parser = argparse.ArgumentParser(description="A script that decode and encode punched card.")
-parser.add_argument('--message', type=str, help="Example message.")
-parser.add_argument('--path', type=str, help="./example/path.txt")
-args = parser.parse_args()
 
 def decode(path):
+    """
+    Decode a punched card form a file.
+    """
     with open(path, 'r') as file:
         lines = file.readlines()
 
@@ -17,22 +16,34 @@ def decode(path):
 
     num_rows = len(matrix)
     num_cols = len(matrix[0])
-    
-    print(num_rows)
-    print(num_cols)
-    # for col in range(num_cols):
-    #     key = ""
-    #     for row in range(num_rows):
-    #         if matrix[row][col] == "#":
-    #             key += str(row)
-    #     print(key)
+
+    message = ""
+    for col in range(num_cols):
+        key = ""
+        for row in range(num_rows):
+            if matrix[row][col] == "#":
+                key += str(row)
+        message += alphabet[key]
+
+    return message
+
 
 def encode(message):
+    """
+    Encode a message to a punched card.
+    """
     print("Encode")
 
-if args.message:
-    encode(args.message)
-elif args.path:
-    decode(args.path)
-else:
-    print("No valid flag provided.")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="A script that decode and encode punched card.")
+    parser.add_argument("-m", "--message", type=str, help="Example message.")
+    parser.add_argument("-p", "--path", type=str, help="./example/path.txt")
+    args = parser.parse_args()
+
+    if args.message:
+        encode(args.message)
+    elif args.path:
+        print(decode(args.path))
+    else:
+        print("No valid flag provided.")
