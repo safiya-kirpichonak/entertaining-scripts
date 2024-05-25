@@ -8,6 +8,6 @@ separate repository, but they were fun to write and I learned something new whil
 - conway-game-of-life - A simple implementation of Conway's Game of Life in JavaScript.
 - punched-card - A simple implementation creator and decoder of punched card in Python.
 
-## Plans
+## Plan
 
 - steganography - A simple implementation of steganography in Python.
