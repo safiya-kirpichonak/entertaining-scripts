@@ -3,6 +3,14 @@
 This repository contains useless scripts that I have written. They are not big enough to be a 
 separate repository, but they were fun to write and I learned something new while writing them.
 
+## Installation
+
+clone this project:
+
+```
+git clone git@github.com:trudy418/useless-scripts.git
+```
+
 ## List of scripts
 
 - conway-game-of-life - A simple implementation of Conway's Game of Life in JavaScript.
@@ -10,4 +18,5 @@ separate repository, but they were fun to write and I learned something new whil
 
 ## Plan
 
+- ??? - Create something interesting with LISP.
 - steganography - A simple implementation of steganography in Python.
