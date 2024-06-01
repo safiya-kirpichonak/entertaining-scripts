@@ -1,6 +1,6 @@
-# Useless scripts [In progress]
+# Entertaining scripts [In progress]
 
-This repository contains useless scripts that I have written. They are not big enough to be a 
+This repository contains entertaining scripts that I have written. They are not big enough to be a 
 separate repository, but they were fun to write and I learned something new while writing them.
 
 ## Installation
@@ -8,7 +8,7 @@ separate repository, but they were fun to write and I learned something new whil
 clone this project:
 
 ```
-git clone git@github.com:trudy418/useless-scripts.git
+git clone git@github.com:trudy418/entertaining-scripts.git
 ```
 
 ## List of scripts
