@@ -19,5 +19,4 @@ git clone git@github.com:trudy418/entertaining-scripts.git
 ## Plan
 
 - smart-games - Create a collection of smart games.
-- ??? - Create something interesting with LISP.
 - steganography - A simple implementation of steganography in Python.
