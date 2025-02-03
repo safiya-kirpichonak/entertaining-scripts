@@ -12,3 +12,4 @@ but they were fun to create, and I learned something new while doing so.
 
 - smart-games - Create a collection of smart games.
 - steganography - A simple implementation of steganography in Python.
+- weird-translator - Create translator from unknown language.
