@@ -15,9 +15,9 @@ git@github.com:safiya-kirpichonak/entertaining-scripts.git
 
 - conway-game-of-life - A simple implementation of Conway's Game of Life in JavaScript.
 - punched-card - A simple implementation creator and decoder of punched card in Python.
-- image-steganography [In progress] - A simple implementation of steganography in Python.
 
 ## Plan
 
+- image-steganography [In progress] - A simple implementation of steganography in Python.
 - smart-games [Stopped] - Create a collection of smart games.
 - weird-translator - Create translator from unknown language.

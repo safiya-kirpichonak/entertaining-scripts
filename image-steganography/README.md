@@ -1,4 +1,4 @@
-# image-steganography
+# image-steganography [In progress]
 
 # LSB (Least Significant Bit)
 

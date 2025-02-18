@@ -1,4 +1,4 @@
-# smart-games [In progress]
+# smart-games [Stopped]
 
 # Usage
 
