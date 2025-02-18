@@ -1,7 +1,15 @@
 # Entertaining scripts [In progress]
 
-This repository contains entertaining scripts I’ve written. They aren't large enough to warrant a separate repository, 
-but they were fun to create, and I learned something new while doing so.
+This repository contains entertaining scripts that I have written. They are not big enough to be a 
+separate repository, but they were fun to write and I learned something new while writing them.
+
+## Installation
+
+clone this project:
+
+```
+git clone git@github.com:trudy418/entertaining-scripts.git
+```
 
 ## List of scripts
 
