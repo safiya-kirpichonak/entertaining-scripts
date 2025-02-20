@@ -21,3 +21,5 @@ git@github.com:safiya-kirpichonak/entertaining-scripts.git
 - image-steganography [In progress] - A simple implementation of steganography in Python.
 - smart-games [Stopped] - Create a collection of smart games.
 - weird-translator - Create translator from unknown language.
+
+sick commit
